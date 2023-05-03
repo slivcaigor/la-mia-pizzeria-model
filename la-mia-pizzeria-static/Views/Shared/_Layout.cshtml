@@ -3,13 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/la_mia_pizzeria_static.styles.css" asp-append-version="true" />
     <title>@ViewData["Title"]</title>
     <link rel="icon" href="~/img/hero-slice.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
-
 </head>
 <body>
     <header>
@@ -21,15 +18,15 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                     </label>
                     <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a asp-controller="home" asp-action="Index">Pizza</a></li>
+                        <li><a asp-controller="pizza" asp-action="Index">Pizza</a></li>
                         <li><a asp-controller="beverages" asp-action="Index">Beverages</a></li>
                         <li><a asp-controller="about" asp-action="Index">About Us</a></li>
                     </ul>
                 </div>
             </div>
             <!-- Logo -->
-            <div class="navbar-center">
-                <a asp-controller="Home">
+            <div class="navbar-center"> 
+                <a asp-controller="Home" asp-action="Index">
                     <img src="/img/logo.png" />
                 </a>
             </div>
