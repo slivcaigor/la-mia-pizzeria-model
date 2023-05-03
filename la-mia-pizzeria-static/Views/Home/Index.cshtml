@@ -1,0 +1,103 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Bringing a slice of happiness to your doorstep";
+
+    var listings = new List<Listing> {
+        new Listing {
+            Name = "Chicken Alfredo Pizza",
+            Image = "/img/Chicken Alfredo Pizza.png",
+            Description = "Alfredo sauce, cooked chicken, sliced mushrooms, mozzarella cheese, and fresh parsley",
+            Price = 13.10,
+            IsNew = true
+        },
+        new Listing {
+            Name = "Mushroom Pizza",
+            Image = "/img/Funghi.png",
+            Description = "Tomato sauce, mozzarella cheese, Italian sausage, sliced mushrooms, and fresh oregano",
+            Price = 10.24,
+            IsNew = false
+        },
+        new Listing {
+            Name = "Ham Pizza",
+            Image = "/img/Ham.png",
+            Description = "Pepperoni Pizza: Tomato sauce, mozzarella cheese, sliced ham, and oregano.",
+            Price = 12.14,
+            IsNew = false
+        },
+        new Listing {
+            Name = "Margherita Pizza",
+            Image = "/img/MargheritaPizza.png",
+            Description = "San Marzano tomatoes, fresh mozzarella cheese, fresh basil leaves, extra-virgin olive oil, and salt",
+            Price = 9.64,
+            IsNew = false
+        },
+        new Listing {
+            Name = "Meat Lovers Pizza",
+            Image = "/img/Meat.png",
+            Description = "Tomato sauce, mozzarella cheese, Italian sausage, bacon, pepperoni, and ham",
+            Price = 14.87,
+            IsNew = true
+        },
+        new Listing {
+            Name = "Pesto Pizza",
+            Image = "/img/Pesto.png",
+            Description = "Pesto sauce, sliced tomatoes, mozzarella cheese, and sliced black olives",
+            Price = 11.24,
+            IsNew = true
+        },
+        new Listing {
+            Name = "Tuna Pizza",
+            Image = "/img/Tuna.png",
+            Description = "Olive oil, mozzarella cheese, ricotta cheese, garlic, and fresh parsley and tuna",
+            Price = 10.64,
+            IsNew = false
+        },
+        new Listing {
+            Name = "Veggie Pizza",
+            Image = "/img/Veggie Pizza.png",
+            Description = "Tomato sauce, mozzarella cheese, green bell pepper, red onion, sliced mushrooms, and sliced black olives",
+            Price = 12.14,
+            IsNew = false
+        },
+        new Listing {
+            Name = "Buffalo Chicken Pizza",
+            Image = "/img/BuffaloChickenPizza.png",
+            Description = "Buffalo sauce, cooked chicken, blue cheese, mozzarella cheese, and sliced celery",
+            Price = 13.44,
+            IsNew = true
+        }
+    };
+}
+
+@section _Jumbotron {
+    @await Html.PartialAsync("_Jumbotron")
+}
+
+<!-- Menu Section -->
+<div class="max-w-screen-xl mx-auto">
+    <h1 class="font-bold text-6xl text-center">Menu</h1>
+
+    <!-- Listings -->
+    <div class="grid-cols-3	grid">
+            
+@foreach (var listing in listings)
+{
+    <div class="card w-96 bg-base-100 shadow-xl">
+    <figure><img src="@listing.Image" /></figure>
+            <div class="card-body">
+            <h2 class="card-title">
+                @listing.Name
+                @if (listing.IsNew) {
+                    <span class="badge badge-secondary">NEW</span>
+                }
+            </h2>
+            <p>@listing.Description</p>
+            <div class="card-actions items-center justify-between">
+                <span class="font-bold text-2xl">$@listing.Price</span>
+                <button class="btn btn-primary">Order Now</button>
+                </div>
+        </div>
+        </div>
+}
+    </div>
+</div>
